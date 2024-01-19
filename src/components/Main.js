@@ -6,6 +6,12 @@ import './Main.css';
 export default class Main extends Component {
     state = {
         novaTarefa: '',
+        tarefas: [
+            'Acordar',
+            'Ir pra academia',
+            'Tomar café',
+            'Estudar JS'
+        ],
     };
 
     handleChange = (e) => {
@@ -16,7 +22,7 @@ export default class Main extends Component {
 
 
     render() {
-        const { novaTarefa } = this.state;
+        const { novaTarefa, tarefas } = this.state;
 
         return (
             <div className='main'>
@@ -31,6 +37,12 @@ export default class Main extends Component {
                         <FaPlus />
                     </button>
                 </form>
+
+                <ul className='tarefas'>
+                    {tarefas.map(tarefas => (
+                        <li>{tarefas}</li>
+                    ))}
+                </ul>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import './Main.css';
-
+import { FaEdit, FaWindowClose } from 'react-icons/fa'
 
 export default class Main extends Component {
     state = {
@@ -40,7 +40,14 @@ export default class Main extends Component {
 
                 <ul className='tarefas'>
                     {tarefas.map(tarefas => (
-                        <li>{tarefas}</li>
+                        <li key={tarefas}>
+                            {tarefas}
+                            <div>
+                                <FaEdit />
+                                <FaWindowClose />
+                            </div>
+
+                        </li>
                     ))}
                 </ul>
             </div>
